@@ -48,7 +48,7 @@ export class Enemy extends entity.Entity {
     this.angle = this.vel.heading();
 
     // Rotate the ship to face the angle of the velocity
-    p.translate(this.pos.x, this.pos.y);
+    p.translate(this.pos);
     p.rotate(this.angle);
 
     // Draw the ship as a triangle
@@ -127,7 +127,7 @@ export class ShooterEnemy extends Enemy {
     this.angle = p.atan2(target.y - this.pos.y, target.x - this.pos.x);
 
     // Rotate the ship to face the angle of the velocity
-    p.translate(this.pos.x, this.pos.y);
+    p.translate(this.pos);
     p.rotate(this.angle);
 
     // Draw the ship as a triangle

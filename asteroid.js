@@ -50,7 +50,7 @@ export class Asteroid extends entity.Entity {
     p.strokeWeight(1.5);
     p.stroke(255);
     p.noFill();
-    p.translate(this.pos.x, this.pos.y);
+    p.translate(this.pos);
     p.beginShape();
     for (var i = 0; i < this.total; i++) {
       var angle = (i / this.total) * (2 * Math.PI);

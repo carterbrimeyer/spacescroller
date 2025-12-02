@@ -2,7 +2,6 @@ export const distance_from_left = 150;
 const move_y_speed = 35;
 const max_y_speed = 50;
 
-import { green } from '@tailwindcss/typography/src/styles.js';
 import * as laser from './laser.js';
 
 var p;
@@ -45,7 +44,7 @@ export class Player {
       this.pos.y += sign(yPos - this.pos.y) * Math.min(speed, move_y_speed);
 
       p.push(); //Start Drawing
-      p.translate(this.pos.x, this.pos.y);
+      p.translate(this.pos);
       if (this.forcefield) {
         this.drawForcefield();
       }
@@ -112,7 +111,6 @@ export class Player {
       p.rotate(0);
       p.noFill();
       p.stroke(109, 180, 238);
-      p.translate();
       p.arc(0, 0, forcefield_radius, forcefield_radius, -p.HALF_PI / 1.2, p.HALF_PI / 1.2);
 
       if(!this.gameNotStarted){
