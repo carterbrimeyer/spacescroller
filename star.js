@@ -1,18 +1,26 @@
-let stars = [];
-export const number_of_stars = 40;
+// Star module - global scope for KaiOS compatibility
+
+// === STAR CONFIGURATION ===
+var STAR_COUNT = 15;
+var STAR_STROKE_WEIGHT = 0.75;
+
+var stars = [];
+var number_of_stars = STAR_COUNT;
 
 var p;
-export function initStars(p5) {
+var Star;
+
+function initStars(p5) {
   p = p5;
 }
 
-export class Star {
+Star = class Star {
   constructor(posX, posY, speed) {
     this.pos = p.createVector(posX, posY);
     this.render = function () {
       p.push();
       p.stroke(255);
-      p.strokeWeight(1.5);
+      p.strokeWeight(STAR_STROKE_WEIGHT);
       p.point(this.pos.x, this.pos.y);
       this.pos.x -= speed;
       p.pop();
@@ -26,13 +34,14 @@ export class Star {
   }
 }
 
-export function generateStar(speed) {
+function generateStar(speed) {
   let posX = p.width;
   let posY = p.height * Math.random();
   let star = new Star(posX, posY, speed - (4 + Math.random()));
   stars.push(star);
 }
-export function generateInitStars(num, speed) {
+
+function generateInitStars(num, speed) {
   for (let i = 0; i < num; i++) {
     let posX = p.width * Math.random();
     let posY = p.height * Math.random();
@@ -41,7 +50,7 @@ export function generateInitStars(num, speed) {
   }
 }
 
-export function starTickCheck(player_user_speed) {
+function starTickCheck(player_user_speed) {
   for (let i = 0; i < stars.length; i++) {
     stars[i].render();
     if (stars[i].offscreen()) {

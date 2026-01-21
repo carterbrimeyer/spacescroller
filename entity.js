@@ -1,10 +1,13 @@
+// Entity module - global scope for KaiOS compatibility
 
 var p;
-export function initEntities(p5) {
+var Entity;
+
+function initEntities(p5) {
   p = p5;
 }
 
-export class Entity {
+Entity = class Entity {
   constructor(xPos, yPos, speed) {
     this.pos = p.createVector(xPos, yPos);
     this.speed = speed;

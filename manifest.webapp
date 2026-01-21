@@ -1,0 +1,26 @@
+{
+  "name": "Space Scroller",
+  "description": "A space shooter game where you navigate through asteroids and enemies",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/icon-56.png",
+    "112": "/icon-112.png"
+  },
+  "developer": {
+    "name": "Space Scroller Developer",
+    "url": "https://carterjb.com"
+  },
+  "type": "web",
+  "version": "1.0.0",
+  "orientation": ["portrait-primary"],
+  "fullscreen": "true",
+  "permissions": {},
+  "locales": {
+    "en-US": {
+      "name": "Space Scroller",
+      "description": "A space shooter game"
+    }
+  },
+  "default_locale": "en-US",
+  "cursor": "false"
+}

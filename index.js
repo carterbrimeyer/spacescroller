@@ -1,21 +1,37 @@
-import { initEffects } from './effects.js';
-import { initEnemies } from './enemy.js';
-import { initEntities } from './entity.js';
-import { initLasers } from './laser.js';
-import { initPlayer } from './player.js';
-import { initScore } from './score.js';
-import { initStars } from './star.js';
-import { initAsteroids } from './asteroid.js';
+// Main game initialization - global scope for KaiOS compatibility
 
-export * from './player.js';
-export * from './asteroid.js';
-export * from './effects.js';
-export * from './laser.js';
-export * from './enemy.js';
-export * from './score.js';
-export * from './star.js';
+// Explosion class using particles
+var Explosion = class Explosion {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.created = Date.now();
+    this.duration = 300;
+    // Create explosion particles
+    const p = window.p5Instance;
+    if (p) {
+      generateParticles(p.createVector(x, y), 20);
+    }
+  }
+  
+  update() {
+    // Particles handle themselves
+  }
+  
+  render() {
+    // Particles render themselves
+  }
+  
+  done() {
+    return Date.now() - this.created > this.duration;
+  }
+}
 
-export function init(p) {
+var effects = [];
+var entities = [];
+
+function init(p) {
+    window.p5Instance = p;
     initPlayer(p);
     initStars(p);
     initAsteroids(p);
