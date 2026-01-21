@@ -107,4 +107,4 @@ spacescroller/
 
 ## Original Game
 
-Based on the space scroller game from [carterjb.com](https://carterjb.com/portfolio/004-portfolio-space-scroller).
+Based on the space scroller game from [carterbrimeyer.com](https://carterbrimeyer.com/portfolio/004-portfolio-space-scroller).
